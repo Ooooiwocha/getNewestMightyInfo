@@ -16,7 +16,6 @@ if input("PRESS ENTER") != 0:
         print("ERROR: OPEN CODE AND SET YOUTUBE API KEY");
         input("PRESS ENTER TO EXIT");
         exit();
-
     params = {'key': API_KEY, 'part': 'snippet', 'playlistId': PLAYLISTID,}
     response = requests.get(URL + 'playlistItems', params=params);
     print(response)
@@ -25,8 +24,7 @@ if input("PRESS ENTER") != 0:
     except:
         input("AN ERROR OCCURRED")
         exit();
-    video_id = response.json()["items"][0]["snippet"]["resourceId"]["videoId"];
-    
+    video_id = response.json()["items"][0]["snippet"]["resourceId"]["videoId"];    
     def getResult():
         try:
             f = open(video_id + ".csv", mode='a', encoding="utf-8");
@@ -57,9 +55,9 @@ if input("PRESS ENTER") != 0:
             print();
             f.close();
         except:
-            print("an error occured");
+            print("AN ERROR OCCURRED");
             f.close();
-            sys.exit();
+            exit();
     while True:
         getResult();
         SEC = 60;
