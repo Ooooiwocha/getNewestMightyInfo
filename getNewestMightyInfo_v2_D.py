@@ -93,7 +93,7 @@ def main():
             edit_fileid = spreadsheet["spreadsheetId"];
             permission = {
                 'type': 'anyone',
-                'role': 'reader',
+                'role': 'commenter',
             }
             service.files().update(fileId=edit_fileid, addParents=WORKSPACE, removeParents=None, fields='id, parents').execute()
             service.permissions().create(fileId=edit_fileid, body=permission).execute()
