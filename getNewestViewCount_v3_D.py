@@ -34,8 +34,8 @@ def main():
         # ここにAPI KEYを入力
         API_KEY = ''
 
-        #スプレッドシートを格納するフォルダのIDを入力
-        WORKSPACE = "1teRrHqMyDQcR56trCpS8qMAP14uroHNY"
+        #スプレッドシートを格納するGoogle DriveフォルダのIDを入力
+        WORKSPACE = ""
         
         try:
             assert API_KEY != '';
