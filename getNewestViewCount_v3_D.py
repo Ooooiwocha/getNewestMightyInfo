@@ -144,6 +144,9 @@ def main():
                 
                 for t, e in zip(txt, arr):
                     print(t, e, end=" ");
+                    
+                hist = int(hist);
+                viewCount = int(viewCount);
 
                 if hist > viewCount:
                     print("再生数の減少を検知しました。")
@@ -151,10 +154,8 @@ def main():
                         backgroundColor = color(1, 0, 0)
                         )
                     format_cell_range(sheet, "B{}".format(current_rows), fmt);
-                    
-                
-                hist = viewCount;
-                
+                                    
+                hist = viewCount;                
                 
                 print();
                 print("Data Succcesfully Saved to https://docs.google.com/spreadsheets/d/{}".format(edit_fileid));
