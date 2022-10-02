@@ -130,9 +130,9 @@ def main():
                     sys.exit(input("An Error Occured."));
                 dt_now = datetime.now()
                 resourse = resourse["items"][0];
-                viewCount = resourse["statistics"]["viewCount"];
-                likeCount = resourse["statistics"]["likeCount"];
-                commentCount = resourse["statistics"]["commentCount"];
+                viewCount = int(resourse["statistics"]["viewCount"]);
+                likeCount = int(resourse["statistics"]["likeCount"]);
+                commentCount = int(resourse["statistics"]["commentCount"]);
                 arr = [dt_now.strftime('%Y-%m-%d %H:%M:%S'), viewCount, likeCount, commentCount];
                 txt = ["時刻", "再生数", "高評価数", "コメント数"];
 
@@ -144,9 +144,6 @@ def main():
                 
                 for t, e in zip(txt, arr):
                     print(t, e, end=" ");
-                    
-                hist = int(hist);
-                viewCount = int(viewCount);
 
                 if hist > viewCount:
                     print("再生数の減少を検知しました。")
