@@ -103,7 +103,7 @@ def main():
         client = gspread.oauth();
         sheet = client.open_by_key(edit_fileid).sheet1
         current_rows = len(sheet.col_values(2));
-        hist = int(sheet.get("B"+str(current_rows))[0][0]) if current_rows!=0 else 0;
+        hist = int(sheet.get("B"+str(current_rows))[0][0].replace(",", "")) if current_rows!=0 else 0;
         
         if sheet.get("A1").first() == None:
             sheet.insert_row(["時刻", "再生数", "高評価数", "コメント数"]);
@@ -139,7 +139,7 @@ def main():
                 f.write(csv);
 
                 sheet.append_row(arr, value_input_option='USER_ENTERED');
-                current_rows+= 1;
+                current_rows = len(sheet.col_values(2));;
                 
                 for t, e in zip(txt, arr):
                     print(t, e, end=" ");
