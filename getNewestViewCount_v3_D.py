@@ -6,7 +6,6 @@ import json
 import sys
 import os
 import time
-import quickstart
 from datetime import datetime
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -48,7 +47,7 @@ def main():
         try:
             creds = Credentials.from_authorized_user_file('token.json', scope)
         except:
-            input("AN ERROR OCCURRED: PUT VALID AUTHENTIFICATED token.json FILE GENERATED AFTER RUNNING quickstart.py BY GOOGLE (MUTATIS MUTANDIS in LIST NAMED \"SCOPE\")");
+            input("AN ERROR OCCURRED: PUT VALID AUTHENTIFICATED token.json FILE GENERATED AFTER RUNNING quickstart.py BY GOOGLE (IN quickstart.py, LIST NAMED \"SCOPE\" NEEDS TOBE CHANGED TO INCLUDE BOTH \"https://www.googleapis.com/auth/spreadsheets\" AND \"https://www.googleapis.com/auth/drive\")");
             sys.exit();
 
         try:
