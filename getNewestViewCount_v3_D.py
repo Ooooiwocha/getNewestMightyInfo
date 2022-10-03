@@ -105,7 +105,7 @@ def main():
         current_rows = len(sheet.col_values(2));
         hist = int(sheet.get("B"+str(current_rows))[0][0].replace(",", "")) if current_rows!=0 else 0;
         
-        if sheet.get("A1").first() == None:
+        if current_rows == 0:
             sheet.insert_row(["時刻", "再生数", "高評価数", "コメント数"]);
             current_rows+= 1;
         
