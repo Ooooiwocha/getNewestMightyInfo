@@ -147,7 +147,12 @@ def main():
                 if hist > viewCount:
                     print("再生数の減少を検知しました。")
                     fmt = cellFormat(
-                        backgroundColor = color(1, 0, 0)
+                        backgroundColor = color(1, 0, 0, 1)
+                        )
+                    format_cell_range(sheet, "B{}".format(current_rows), fmt);
+                else:
+                    fmt = cellFormat(
+                        backgroundColor = color(1, 1, 1, 0)
                         )
                     format_cell_range(sheet, "B{}".format(current_rows), fmt);
                                     
