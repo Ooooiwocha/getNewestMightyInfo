@@ -62,6 +62,6 @@ print(df);
 
 # display graph
 df.to_csv("timetable.csv");
-df.plot(title="Total ViewCount in 24 hour");
+df.plot(title="Total ViewCount in 24 hours");
 plt.grid()
 plt.show();
