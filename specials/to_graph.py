@@ -34,7 +34,13 @@ for file in files:
     print("file {} loaded.".format(file));
 
 	# convert into DataFrame object
-    records = pd.read_excel(file, usecols=[0, 1], index_col=0) if ".xlsx" in file else pd.read_csv(file, usecols=[0, 1], index_col=0);
+    records = None;
+    if ".xlsx" in file:
+    	records = pd.read_excel(file, usecols=[0, 1], index_col=0)
+    elif ".csv" in file:
+    	records = pd.read_csv(file, usecols=[0, 1], index_col=0);
+    else:
+    	continue;
 
     # search
     filtered = records.filter(regex=" 19:15", axis=0);
