@@ -48,7 +48,7 @@ for file in files:
     try:
     	# discard extra data
     	rec = filtered.iloc[1,:];
-    	rec = rec.set_axis([filtered.index.values[0]]);
+    	rec = rec.set_axis([filtered.index.values[1]]);
     	df = pd.concat([df, rec]);
 
     except:
